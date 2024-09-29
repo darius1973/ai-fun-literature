@@ -66,6 +66,12 @@
 					<include>**/*</include>
 				</includes>
 			</resource>
+			<resource>
+				<directory>src/main/frontend</directory> <!-- Add this line -->
+				<includes>
+					<include>**/*</include> <!-- Include all files in frontend -->
+				</includes>
+			</resource>
 		</resources>
 		<plugins>
 			<plugin>
