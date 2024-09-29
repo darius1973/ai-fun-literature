@@ -15,7 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 /**
  * Nothing really interesting here, this is just ui view ...
  */
-@Route("shakespeare-view")
+@Route("")
 public class ShakespeareView extends HorizontalLayout {
 
 
