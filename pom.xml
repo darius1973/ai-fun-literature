@@ -112,6 +112,7 @@
 						<executions>
 							<execution>
 								<id>frontend</id>
+								<phase>compile</phase>
 								<goals>
 									<goal>prepare-frontend</goal>
 									<goal>build-frontend</goal>
