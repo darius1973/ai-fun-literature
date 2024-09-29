@@ -1,1 +1,1 @@
-web: java -jar target/literature-0.0.1.jar
+web: java -jar target/literature-0.0.1-SNAPSHOT.jar
