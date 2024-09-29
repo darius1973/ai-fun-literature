@@ -1,4 +1,4 @@
-package com.ai.literature.trainers;
+package com.ai.literature.trainer;
 
 import com.ai.literature.markov.chain.MarkovChain;
 import jakarta.annotation.PostConstruct;
@@ -21,13 +21,14 @@ public class Trainer {
     private void train() throws Exception {
         // load file in memory
         // not at all optimal when working with large volumes of data
-        // but for the present example , it works
+        // but for the present example ,it works
         // the 'model' is trained with a text from Shakespeare sonnets
+        // text file is loaded , then the output is a collection of words
         String[] textResource = Files
                 .readString(Paths.get(Trainer.class.getClassLoader().getResource("shakespeare.txt")
                         .toURI())
                 ).split(" ");
-        // take every word, find the word next to it
+        // take every word from the collection, find the word next to it
         // if within the training text you find the word again and the word next to it again
         // then increase the transitions number for that word with 1
         for (int i = 0; i < textResource.length - 1; i++) {
@@ -50,6 +51,7 @@ public class Trainer {
             // so , we'll have a whole collection of transitions for each word at the end.
             Map<String, Integer> transitions = markovChain.getMarkovChainTransitions().get(currentWord);
             transitions.put(nextWord, transitions.getOrDefault(nextWord, 0) + 1);
+            // ...and that is all about the very complex process called 'training the model'
         }
     }
 

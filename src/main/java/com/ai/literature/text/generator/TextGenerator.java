@@ -19,11 +19,15 @@ public class TextGenerator {
     public String generateSentence(String startWord, int length) {
         StringBuilder sentence = new StringBuilder(startWord);
         String currentWord = startWord;
-        //just find next word and add it to the sentence until it reaches the required length.
+        // just find next word and add it to the sentence, then repeat the process based on the 'next word' found
+        // and again - until it reaches the required length.
         for (int i = 0; i < length - 1; i++) {
             String nextWord = nextWordPredictor.predictNextWord(currentWord);
             if (nextWord == null) break;
+            // every found word is appended to the phrase
             sentence.append(" ").append(nextWord);
+            // the next word previously found became current word
+            // and then the iteration goes on
             currentWord = nextWord;
         }
 
