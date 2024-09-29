@@ -1,0 +1,1 @@
+web: java -jar target/literature-0.0.1.jar
