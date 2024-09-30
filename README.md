@@ -15,7 +15,8 @@ For the logic of predicting the next word, have a look at java/com/ai/literature
 java/com/ai/literature/text/generator/TextGenerator.java
 
 A Markov chain is a mathematical system that experiences transitions from one state to another according to certain probabilistic rules.
-In this text-based Markov Chain, the states are individual words.In this case , each word is a 'state'.Words are separated by " " ( no fancy regex logic added)
+In this text-based Markov Chain, the states are individual words.
+In this case , each word is a 'state'.Words are separated by " " ( no fancy regex logic added)
 Transitions between states represent how often one word follows another in the training text.
 The model learns probabilities for each word or character, and then based on the current state (e.g., a word), it probabilistically predicts the next one.
 ...and that's what it does.
